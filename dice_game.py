@@ -18,8 +18,6 @@ dice_cell4 = Frame(dice_frame, width=100, height=100)
 dice_cell5 = Frame(dice_frame, width=100, height=100)
 dice_cell6 = Frame(dice_frame, width=100, height=100)
 dice_cell7 = Frame(dice_frame, width=100, height=100)
-dice_cell8 = Frame(dice_frame, width=100, height=100)
-dice_cell9 = Frame(dice_frame, width=100, height=100)
 
 # place dice cells
 dice_cell1.grid(row=0, column=0, sticky='NW')

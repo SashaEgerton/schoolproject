@@ -3,12 +3,12 @@ from random import randint
 
 root = Tk()
 
-app_window = Frame(root, width=400, height=700, padx=25, pady=25)
+app_window = Frame(root, width=400, height=600, padx=25, pady=25)
 app_window.grid(row=0, column=0, columnspan=2)
 
 # card frame
 card_frame = Frame(root, highlightbackground='black', highlightthickness=1, width=300, height=500)
-card_frame.place(x=200, y=350, anchor='center')
+card_frame.place(x=200, y=300, anchor='center')
 
 # card cells
 card_cell1 = Frame(card_frame, width=50, height=50)
@@ -21,9 +21,9 @@ card_cell2.grid(row=1, column=1, sticky='NW')
 card_cell3.grid(row=2, column=2, sticky='NW')
 
 # cell labels
-label1 = None
-label2 = None
-label3 = None
+label1  = Label(card_cell1,  font=('Default', 40), text='')
+label2  = Label(card_cell2,  font=('Default', 200), text='')
+label3  = Label(card_cell3,  font=('Default', 40), text='')
 
 
 def get_color(suit):
@@ -49,28 +49,22 @@ def get_suit(suit):
 
 def show_label1(suit, value):
     global label1
-    if label1 is not None:
-        label1.destroy()
-
-    label1 = Label(card_cell1, fg=get_color(suit), font=('Default', 40), text=get_value(value))
+    label1['fg'] = get_color(suit)
+    label1['text'] = get_value(value)
     label1.place(x=25, y=25, anchor='center')
 
 
 def show_label2(suit, value):
     global label2
-    if label2 is not None:
-        label2.destroy()
-
-    label2 = Label(card_cell2, fg=get_color(suit), font=('Default', 200), text=get_suit(suit))
+    label2['fg'] = get_color(suit)
+    label2['text'] = get_suit(suit)
     label2.place(x=100, y=200, anchor='center')
 
 
 def show_label3(suit, value):
     global label3
-    if label3 is not None:
-        label3.destroy()
-
-    label3 = Label(card_cell3, fg=get_color(suit), font=('Default', 40), text=get_value(value))
+    label3['fg'] = get_color(suit)
+    label3['text'] = get_value(value)
     label3.place(x=25, y=25, anchor='center')
 
 
